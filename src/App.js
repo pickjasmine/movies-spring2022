@@ -5,9 +5,6 @@ import {useState} from "react";
 
 const App = () => {
     // you can do JavaScript here
-    console.log("hello");
-
-
     /*
     function useState(startingState) {
         // some logic goes here
@@ -20,6 +17,7 @@ const App = () => {
     // const currentMovie = useState(null)[0];
     // const setCurrentMovie = useState(null)[1];
 
+    console.log(currentMovie);
 
     return (
         <div className="movie-container">
@@ -28,6 +26,7 @@ const App = () => {
                     <>
                         <MoviePreview
                             movieToPreview={movie}
+                            setCurrentMovie={setCurrentMovie}
                             whatever="You want"
                         />
                     </>
