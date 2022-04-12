@@ -4,7 +4,7 @@ import {movies} from './movies';
 const App = () => {
     return (
         <div>
-            {/* Error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</> */}
+            {/* This map shows a callback using an arrow function */}
             {
                 movies.map((movie) =>
                     <>
@@ -12,6 +12,21 @@ const App = () => {
                         <img src={movie.posterUrl}/>
                     </>
                 )
+            }
+
+            {/*
+             This map shows a callback using an anonymous "old way" of declaring a function
+             Remember the return statement and the parentheses wrapped around your returned HTML
+            */}
+            {
+                movies.map(function (movie) {
+                    return (
+                        <>
+                            <p>{movie.title}</p>
+                            <img src={movie.posterUrl}/>
+                        </>
+                    )
+                })
             }
         </div>
     );
