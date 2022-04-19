@@ -5,25 +5,19 @@ import {useState} from "react";
 import MovieDetails from "./MovieDetails";
 
 const App = () => {
-    // you can do JavaScript here
-
-    /*
-    function useState(startingState) {
-        // some logic goes here
-
-        return [variable, setVariableFunction];
-    }
-     */
     const [currentMovie, setCurrentMovie] = useState(null);
-    // this line is the same as the next two - this is array destructuring
-    // const currentMovie = useState(null)[0];
-    // const setCurrentMovie = useState(null)[1];
 
-    console.log(currentMovie);
+    const clearCurrentMovie = () => {
+        setCurrentMovie(null);
+    }
+
+    // old way of declaring a function
+    // function clearCurrentMovie() {
+    //     setCurrentMovie(null);
+    // }
 
     return (
         <div className="movie-container">
-            {/* key is needed in maps for React to correctly handle component states and rerendering! */}
             {
                 movies.map((movie) =>
                     <MoviePreview
@@ -35,7 +29,10 @@ const App = () => {
                 )
             }
 
-            {/* <MovieDetails/> is also fine to use here */}
+            {/* clearCurrentMovie does not have () afterwards so
+            that it only gets called when the button is clicked */}
+            <button onClick={clearCurrentMovie}>Clear</button>
+
             <MovieDetails
                 currentMovie={currentMovie}
             >

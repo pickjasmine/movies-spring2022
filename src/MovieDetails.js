@@ -1,8 +1,5 @@
 const MovieDetails = (props) => {
-    // JS logic here
-
     const {currentMovie} = props;
-    // equivalent to const currentMovie = props.currentMovie;
 
     return (
         <div>
