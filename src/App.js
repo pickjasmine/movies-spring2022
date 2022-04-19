@@ -2,6 +2,7 @@ import './App.css';
 import {movies} from './movies';
 import MoviePreview from "./MoviePreview";
 import {useState} from "react";
+import MovieDetails from "./MovieDetails";
 
 const App = () => {
     // you can do JavaScript here
@@ -34,23 +35,11 @@ const App = () => {
                 )
             }
 
-
-            {/* ternary operators are fancy but simplified if/else statements */}
-            {/* check if currentMovie exists */}
-            {/* if it does, show the <div> block */}
-            {/* if it does not, show the <p> No movie selected </p> block */}
-            {
-                currentMovie ?
-                    <div>
-                        <p>{currentMovie.title}</p>
-                        <p>{currentMovie.description}</p>
-                        <p>{currentMovie.rating}</p>
-                        <p>{currentMovie.director}</p>
-                        <p>{currentMovie.releaseYear}</p>
-                    </div>
-                    :
-                    <p>No movie selected</p>
-            }
+            {/* <MovieDetails/> is also fine to use here */}
+            <MovieDetails
+                currentMovie={currentMovie}
+            >
+            </MovieDetails>
         </div>
     );
 }

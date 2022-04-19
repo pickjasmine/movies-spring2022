@@ -13,14 +13,14 @@ const MoviePreview = (props) => {
     // const movieToPreview = props.movieToPreview;
 
     return (
-        <>
+        <div>
             <p>{movieToPreview.title}</p>
             <img
                 src={movieToPreview.posterUrl}
                 alt={movieToPreview.title}
                 onClick={() => setCurrentMovie(movieToPreview)}
             />
-        </>
+        </div>
     )
 }
 
