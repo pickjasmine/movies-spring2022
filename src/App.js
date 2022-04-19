@@ -22,15 +22,15 @@ const App = () => {
 
     return (
         <div className="movie-container">
+            {/* key is needed in maps for React to correctly handle component states and rerendering! */}
             {
                 movies.map((movie) =>
-                    <>
-                        <MoviePreview
-                            movieToPreview={movie}
-                            setCurrentMovie={setCurrentMovie}
-                            whatever="You want"
-                        />
-                    </>
+                    <MoviePreview
+                        key={movie.title}
+                        movieToPreview={movie}
+                        setCurrentMovie={setCurrentMovie}
+                        whatever="You want"
+                    />
                 )
             }
 
